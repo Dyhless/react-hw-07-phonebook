@@ -1,5 +1,5 @@
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
 import { deleteContact, fetchContacts } from 'redux/contactsApi';
 import { Loader } from 'components/Loader';
 import {
@@ -22,22 +22,21 @@ const ContactList = () => {
   const visibleContacts = useSelector(selectVisibleContacts);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
-  const [contactToDeleteId, setContactToDeleteId] = useState(null);
 
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
-  if (!visibleContacts?.length && !error & !isLoading) {
-    return <Empty>No contacts added yet.</Empty>;
-  }
-
-  if (error) {
-    return <p>{error}</p>;
-  }
+  const handleDelete = id => {
+    dispatch(deleteContact(id));
+  };
 
   return (
     <List>
+      {!visibleContacts.length && !error && !isLoading && (
+        <Empty>No contacts</Empty>
+      )}
+      {error && <p>{error}</p>}
       {visibleContacts.map(({ id, name, number }) => (
         <ListItem key={id}>
           <ContactInfo>
@@ -46,15 +45,10 @@ const ContactList = () => {
           </ContactInfo>
           <DeleteButton
             type="button"
-            onClick={() => {
-              setContactToDeleteId(id);
-              dispatch(deleteContact(id)).then(() => {
-                setContactToDeleteId(null);
-              });
-            }}
-            disabled={isLoading && contactToDeleteId === id}
+            onClick={() => handleDelete(id)}
+            disabled={isLoading}
           >
-            {contactToDeleteId === id && <Loader />}
+            {isLoading && <Loader />}
             Delete
           </DeleteButton>
         </ListItem>
