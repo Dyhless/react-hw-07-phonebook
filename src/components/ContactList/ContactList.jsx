@@ -1,7 +1,12 @@
-import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact } from 'redux/contactsSlice';
-import { getContacts, getFilter } from 'redux/selectors';
+import { useEffect, useState } from 'react';
+import { deleteContact, fetchContacts } from 'redux/contactsApi';
+import { Loader } from 'components/Loader';
+import {
+  selectError,
+  selectIsLoading,
+  selectVisibleContacts,
+} from 'redux/selectors';
 import {
   List,
   ListItem,
@@ -9,30 +14,47 @@ import {
   Name,
   Number,
   DeleteButton,
+  Empty,
 } from './ContactList.styled';
 
 const ContactList = () => {
-  const contacts = useSelector(getContacts);
-  const filter = useSelector(getFilter);
   const dispatch = useDispatch();
+  const visibleContacts = useSelector(selectVisibleContacts);
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
+  const [contactToDeleteId, setContactToDeleteId] = useState(null);
 
-  const filteredContacts = contacts?.filter(contact =>
-    contact?.name?.toLowerCase().includes(filter.toLowerCase())
-  );
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
-  const onDeleteContact = id => {
-    dispatch(deleteContact(id));
-  };
+  if (!visibleContacts?.length && !error & !isLoading) {
+    return <Empty>No contacts added yet.</Empty>;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
 
   return (
     <List>
-      {filteredContacts.map(({ id, name, number }) => (
+      {visibleContacts.map(({ id, name, number }) => (
         <ListItem key={id}>
           <ContactInfo>
             <Name>{name}</Name>
             <Number>{number}</Number>
           </ContactInfo>
-          <DeleteButton type="button" onClick={() => onDeleteContact(id)}>
+          <DeleteButton
+            type="button"
+            onClick={() => {
+              setContactToDeleteId(id);
+              dispatch(deleteContact(id)).then(() => {
+                setContactToDeleteId(null);
+              });
+            }}
+            disabled={isLoading && contactToDeleteId === id}
+          >
+            {contactToDeleteId === id && <Loader />}
             Delete
           </DeleteButton>
         </ListItem>

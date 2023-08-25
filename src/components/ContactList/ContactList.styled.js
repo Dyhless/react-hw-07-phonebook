@@ -32,3 +32,7 @@ export const DeleteButton = styled.button`
   cursor: pointer;
   font-size: 14px;
 `;
+
+export const Empty = styled.p`
+  color: red;
+`;
