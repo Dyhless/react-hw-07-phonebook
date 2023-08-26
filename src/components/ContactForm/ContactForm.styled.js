@@ -15,6 +15,7 @@ export const Label = styled.label`
 export const Input = styled.input`
   padding: 5px;
   margin-top: 5px;
+  margin-bottom: 10px;
   width: 95%;
   border-radius: 6px;
   font-size: 18px;

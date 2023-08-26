@@ -17,14 +17,17 @@ export const ContactInfo = styled.div`
 export const Name = styled.p`
   font-weight: bold;
   margin-right: 10px;
+  margin-bottom: 5px;
 `;
 
 export const Phone = styled.p`
-  color: #1784ff;
+  color: #007afe;
+  font-weight: bold;
 `;
 
 export const DeleteButton = styled.button`
   padding: 5px;
+  margin-bottom: 10px;
   background-color: #4f4f50;
   color: #fff;
   border: none;
