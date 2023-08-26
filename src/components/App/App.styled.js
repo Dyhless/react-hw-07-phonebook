@@ -8,15 +8,15 @@ export const Container = styled.div`
 `;
 
 export const PhoneFrame = styled.div`
-  background-color: #f4f4f4;
+  background-color: #999999;
   border-radius: 20px;
   padding: 20px;
   width: 300px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 `;
 
 export const Title = styled.h1`
-  font-size: 18px;
+  font-size: 28px;
   text-align: center;
   margin-bottom: 20px;
 `;

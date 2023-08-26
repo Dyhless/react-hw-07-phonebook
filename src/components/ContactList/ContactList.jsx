@@ -12,7 +12,7 @@ import {
   ListItem,
   ContactInfo,
   Name,
-  Number,
+  Phone,
   DeleteButton,
   Empty,
 } from './ContactList.styled';
@@ -37,11 +37,11 @@ const ContactList = () => {
         <Empty>No contacts</Empty>
       )}
       {error && <p>{error}</p>}
-      {visibleContacts.map(({ id, name, number }) => (
+      {visibleContacts.map(({ id, name, phone }) => (
         <ListItem key={id}>
           <ContactInfo>
             <Name>{name}</Name>
-            <Number>{number}</Number>
+            <Phone>{phone}</Phone>
           </ContactInfo>
           <DeleteButton
             type="button"

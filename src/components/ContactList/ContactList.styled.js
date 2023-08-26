@@ -6,7 +6,7 @@ export const List = styled.ul`
 `;
 
 export const ListItem = styled.li`
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 `;
 
 export const ContactInfo = styled.div`
@@ -19,20 +19,29 @@ export const Name = styled.p`
   margin-right: 10px;
 `;
 
-export const Number = styled.p`
-  color: gray;
+export const Phone = styled.p`
+  color: #454545;
 `;
 
 export const DeleteButton = styled.button`
   padding: 5px;
-  background-color: #ff3d00;
+  background-color: #333333;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 16px;
+
+  transition: color 250ms cubic-bezier(0.65, 0.05, 0.36, 1),
+    background-color 250ms cubic-bezier(0.65, 0.05, 0.36, 1),
+    border-color 250ms cubic-bezier(0.65, 0.05, 0.36, 1);
+
+  &:hover {
+    color: white;
+    background-color: #ff4539;
+    border-color: white;
 `;
 
 export const Empty = styled.p`
-  color: red;
+  color: #333333;
 `;
