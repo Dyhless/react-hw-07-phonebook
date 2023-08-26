@@ -19,7 +19,7 @@ export const Input = styled.input`
   border-radius: 6px;
   font-size: 18px;
   &:hover {
-    border-color: #ff3d00;
+    border-color: #dcc8f7;
     
     transition: color 250ms cubic-bezier(0.65, 0.05, 0.36, 1),
     background-color 250ms cubic-bezier(0.65, 0.05, 0.36, 1),
@@ -34,7 +34,7 @@ export const Button = styled.button`
   font-weight: bold;
   border: none;
   cursor: pointer;
-  width: 106%;
+  width: 100%;
   border-radius: 6px;
 
   transition: color 250ms cubic-bezier(0.65, 0.05, 0.36, 1),

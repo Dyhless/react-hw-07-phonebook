@@ -8,7 +8,7 @@ export const Container = styled.div`
 `;
 
 export const PhoneFrame = styled.div`
-  background-color: #999999;
+  background-color: #dfdfdf;
   border-radius: 20px;
   padding: 20px;
   width: 300px;

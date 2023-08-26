@@ -20,12 +20,12 @@ export const Name = styled.p`
 `;
 
 export const Phone = styled.p`
-  color: #454545;
+  color: #1784ff;
 `;
 
 export const DeleteButton = styled.button`
   padding: 5px;
-  background-color: #333333;
+  background-color: #4f4f50;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -43,5 +43,5 @@ export const DeleteButton = styled.button`
 `;
 
 export const Empty = styled.p`
-  color: #333333;
+  color: #858585;
 `;
