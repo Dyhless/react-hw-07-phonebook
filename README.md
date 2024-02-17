@@ -1,28 +1,28 @@
-Перейти к основному содержимому Критерии приема Используй этот шаблон
-React-проекта как стартовую точку своего приложения.
+Skip to main content Admission criteria Use this React project template as a
+starting point for your application.
 
-Создан репозиторий goit-react-hw-07-phonebook Использована библиотека Redux
-Toolkit Книга контактов Выполни рефакторинг кода приложения «Книга контактов».
-Удали код отвечающий за хранение и чтение контактов из локального хранилища, и
-добавь взаимодействие с бэкендом для хранения контактов.
+Created repository goit-react-hw-07-phonebook. Used the library Redux Toolkit.
+Contact book Perform refactoring of the Contact Book application code. Remove
+the code responsible for storing and reading contacts from the local storage,
+and add communication with the backend for storing contacts.
 
-Бэкенд Создай свой персональный бэкенд для разработки при помощи UI-сервиса
-mockapi.io. Зарегистрируйся используя свой аккаунт GitHub. Создай ресурс
-contacts чтобы получить ендпоинт /contacts. Используй конструктор ресурса и
-опиши объект контакта как на иллюстрации.
+Backend Create your own personal backend for development with the UI service
+mockapi.io. Sign up using your GitHub account. Create a resource contacts to get
+your handpoint /contacts. Use resource constructor and describe the contact
+object as on the picture.
 
-Contact schema Форма состояния Добавь в состояние Redux обработку индикатора
-загрузки и ошибки. Для этого измени форму состояния.
+Contact schema State Form Add the load and error indicator handling to the Redux
+state. To do this, change the state form.
 
 { contacts: { items: [], isLoading: false, error: null }, filter: "" }
 
-Операции Используй функцию createAsyncThunk для объявления асинхронный
-генераторов экшенов и выполнения HTTP-запросов. Обработку экшенов и изменение
-данных в состоянии Redux сделай при помощи createSlice.
+Operations Use createAsyncThunk to declare asynchronous action generators and
+make HTTP requests. Do the processing of the actions and change data in Redux
+state with createSlice.
 
-Объяви следующие операции:
+Declare the following operations:
 
-fetchContacts - получение массива контактов (метод GET) запросом. Базовый тип
-экшена "contacts/fetchAll". addContact - добавление контакта (метод POST).
-Базовый тип экшена "contacts/addContact". deleteContact - удаление контакта
-(метод DELETE). Базовый тип экшена "contacts/deleteContact".
+fetchContacts - get an array of contacts (GET method) by GET request. The basic
+type of action "contacts/fetchAll". addContact - add contact (POST method).
+Basic type of action "contacts/addContact". deleteContact - deletes a contact
+(DELETE method). Basic type of action "contacts/deleteContact".
