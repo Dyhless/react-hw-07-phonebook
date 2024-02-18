@@ -22,7 +22,7 @@ state with createSlice.
 
 Declare the following operations:
 
-fetchContacts - get an array of contacts (GET method) by GET request. The basic
-type of action "contacts/fetchAll". addContact - add contact (POST method).
-Basic type of action "contacts/addContact". deleteContact - deletes a contact
-(DELETE method). Basic type of action "contacts/deleteContact".
+`fetchContacts` - get an array of contacts (GET method) by GET request. The
+basic type of action "contacts/fetchAll". addContact - add contact (POST
+method). Basic type of action "contacts/addContact". deleteContact - deletes a
+contact (DELETE method). Basic type of action "contacts/deleteContact".
