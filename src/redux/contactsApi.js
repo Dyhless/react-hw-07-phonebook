@@ -2,7 +2,7 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 // Установка базового URL для всех запросов
-axios.defaults.baseURL = 'https://64e8987199cf45b15fdfd62f.mockapi.io/contacts/';
+axios.defaults.baseURL = 'https://65d34b11522627d5010889c0.mockapi.io/contacts/';
 
 // Функция для создания асинхронной операции
 const createContactAsyncThunk = (name, asyncFn) =>
